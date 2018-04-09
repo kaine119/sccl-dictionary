@@ -1,0 +1,24 @@
+stages: 
+  - test
+  - build
+
+before_script: 
+  - apt-get update -qq && apt-get install -y -qq nodejs 
+  - node -v
+  - npm -v
+
+client_lint:
+  script:
+    - cd client
+    - npm run lint
+  stage: test
+
+client_build:
+  script:
+    - cd client
+    - npm run build
+  stage: build
+  artifacts: 
+    paths:
+      - client/dist
+    expire_in: 2 weeks
