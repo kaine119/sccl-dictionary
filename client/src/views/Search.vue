@@ -3,7 +3,7 @@
     <div class="mdl-cell mdl-cell--4-col mdl-cell--hide-phone"></div>
     <div class="mdl-cell mdl-cell--8ol mdl-cell--4-col-phone" id="grid-cell">
       <div class="mdl-card mdl-shadow--2dp" id="search-card">
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-shadow--" id="search-query">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="search-query">
           <input id="query" type="text" class="mdl-textfield__input"
                  v-model="query" v-on:keyup.enter="search()">
           <label for="query" class="mdl-textfield__label">Search</label>

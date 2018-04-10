@@ -4,8 +4,11 @@
     <div class="mdl-cell mdl-cell--4-col">
       <div class="mdl-shadow--2dp" id="results-card">
         <h1>Results for {{ query }}</h1>
-        <ul class="mdl-list">  
-          <ResultItem v-for="result in results" v-bind:title="result.name" v-bind:itemid="result.id" synopsis="This is a test." v-bind:key="result.id" />
+        <ul class="mdl-list">
+          <ResultItem v-for="result in results" v-bind:key="result.id"
+                v-bind:title="result.name"
+                v-bind:itemid="result.id"
+                synopsis="This is a test." />
       </ul>
       </div>
     </div>
