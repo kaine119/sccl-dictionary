@@ -39,7 +39,7 @@ pages:
     - web
   script: 
     - cd client
-    - echo "module.exports={configureWebpack:{output:{publicPath:'/sscl-dictionary'}}}" > vue.config.js
+    - echo "module.exports={configureWebpack:{output:{publicPath:'/sscl-dictionary'},resolve:{alias:{mdl:'material-design-lite'}}},pwa:{workboxPluginMode:'InjectManifest',workboxOptions:{swSrc:'src/serviceWorker.js',swDest:'service-worker.js'}},}" > vue.config.js
     - npm run build
     - mv dist ../public
   stage: gitlab-deploy
