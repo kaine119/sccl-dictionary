@@ -27,3 +27,15 @@ client_build:
   only:
     - master
     - web
+
+# client deployment to gitlab pages
+pages: 
+  artifacts:
+    paths:
+      - client/dist
+  only:
+    - master
+    - web
+  script: 
+    - cd client
+    - npm run build
