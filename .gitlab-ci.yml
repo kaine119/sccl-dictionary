@@ -24,3 +24,6 @@ client_build:
     paths:
       - client/dist
     expire_in: 2 weeks
+  only:
+    - master
+    - web
