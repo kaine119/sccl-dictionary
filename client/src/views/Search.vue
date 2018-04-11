@@ -23,6 +23,8 @@ export default {
   name: 'Search',
   methods: {
     search() {
+      this.$store.commit('changeQuery', { newQuery: this.query });
+      this.$store.dispatch('getQueryResults');
       this.$router.push({ name: 'results', params: { query: this.query } });
     },
   },
