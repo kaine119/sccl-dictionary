@@ -3,6 +3,7 @@ image: node:9
 stages: 
   - test
   - build
+  - gitlab-deploy
 
 before_script: 
   - node -v
@@ -39,4 +40,4 @@ pages:
   script: 
     - cd client
     - npm run build
-  stage: deploy
+  stage: gitlab-deploy
