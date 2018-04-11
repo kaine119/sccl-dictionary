@@ -33,11 +33,12 @@ client_build:
 pages: 
   artifacts:
     paths:
-      - client/dist
+      - public
   only:
     - master
     - web
   script: 
     - cd client
     - npm run build
+    - mv dist ../public
   stage: gitlab-deploy
