@@ -39,6 +39,7 @@ pages:
     - web
   script: 
     - cd client
+    - echo "module.exports={configureWebpack:{output:{publicPath:'/sscl-dictionary'}}}" > vue.config.js
     - npm run build
     - mv dist ../public
   stage: gitlab-deploy
