@@ -39,3 +39,4 @@ pages:
   script: 
     - cd client
     - npm run build
+  stage: deploy
