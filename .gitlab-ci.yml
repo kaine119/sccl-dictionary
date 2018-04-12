@@ -3,6 +3,7 @@ image: node:9
 stages: 
   - test
   - build
+  - gitlab-deploy
 
 before_script: 
   - node -v
@@ -27,3 +28,18 @@ client_build:
   only:
     - master
     - web
+
+# client deployment to gitlab pages
+pages: 
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
+    - web
+  script: 
+    - cd client
+    - echo "module.exports={configureWebpack:{output:{publicPath:'/sscl-dictionary'},resolve:{alias:{mdl:'material-design-lite'}}},pwa:{workboxPluginMode:'InjectManifest',workboxOptions:{swSrc:'src/serviceWorker.js',swDest:'service-worker.js'}},}" > vue.config.js
+    - npm run build
+    - mv dist ../public
+  stage: gitlab-deploy
